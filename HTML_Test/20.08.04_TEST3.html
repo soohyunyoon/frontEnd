@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="test.do" method="GET">
+        <fieldset>
+            <legend>회원가입</legend>
+            <table border="1">
+                <tr>
+                    <th>아이디</th>
+                    <td><input type="text" name="userId" placeholder="아이디를 입력하시오." maxlength="15" required ></td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td><input type="password" name="userPwd" placeholder="총 8~15글자로 입력하시오." maxlength="15" required ></td>
+                </tr>
+                <tr>
+                    <th>비밀번호 확인</th>
+                    <td><input type="password" name="checkPwd" placeholder="한번 더 입력해주세요." maxlength="15" required ></td>
+                </tr>
+                <tr>
+                    <th>이름</th>
+                    <td><input type="text" name="userName" placeholder="이름을 입력하시오"></td>
+                </tr>
+                <tr>
+                    <th>나이</th>
+                    <td><input type="number" name="age" min="20" max="50"></td>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>
+                        <input type="radio" name="gender" value="M"> 
+                        <label for="radioM">남</label>
+                        <input type="radio" name="gender" value="F">
+                        <label for="radioF">여</label>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>취미</th>
+                    <td>
+                        <input type="checkbox" name="hobby" value="reading"> 독서
+                        <input type="checkbox" name="hobby" value="movie"> 영화
+                        <input type="checkbox" name="hobby" value="sport"> 운동
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <button type="submit">회원가입</button>
+            <input type="reset" value="초기화">
+        </fieldset>
+    </form>
+
+</body>
+</html>
