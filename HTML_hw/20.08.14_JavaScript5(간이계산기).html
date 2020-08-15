@@ -10,14 +10,14 @@
     첫번째 값 : 
     <input type="text" id="fNum"> <br>
     두번째 값 :
-    <input type="text" id="tNum"> <br>
-    <input type="button" value="+" id="plus" onclick="calculator(this.value)">
-    <input type="button" value="-" id="minum" onclick="calculator(this.value)">
-    <input type="button" value="x" id="multi" onclick="calculator(this.value)">
-    <input type="button" value="/" id="divi" onclick="calculator(this.value)">
-    <input type="button" value="%" id="per" onclick="calculator(this.value)">
+    <input type="text" id="sNum"> <br>
+    <input type="button" value="+" onclick="calculator(this.value)">
+    <input type="button" value="-" onclick="calculator(this.value)">
+    <input type="button" value="x" onclick="calculator(this.value)">
+    <input type="button" value="/" onclick="calculator(this.value)">
+    <input type="button" value="%" onclick="calculator(this.value)">
     <br><br>
-    계산결과 : <span></span>
+    계산결과 : <span id="final"></span>
 
     <br><hr>
     <pre>
@@ -31,21 +31,23 @@
     </pre>
 
     <script>
-        function calculator(value) {
+        function calculator(val) {
 
-            var plus = document.getElementById("plus");
-            var minus = document.getElementById("minus");
-            var multi = document.getElementById("multi");
-            var divi = document.getElementById("divi");
-            var per = document.getElementById("per");
-            var fNum = document.getElementById("fNum");
-            var sNum = document.getElementById("sNum");
-
-            switch(value) {
-                case plus : fNum + sNum ; break;
+            var fNum = Number(document.getElementById("fNum").value);
+            var sNum = Number(document.getElementById("sNum").value);
+            
+            var final = document.getElementById("final");
+            
+            var opValue = "";
+            switch(val) {
+                case "+" : opValue = fNum + sNum; break;
+                case "-" : opValue = fNum - sNum; break;
+                case "x" : opValue = fNum * sNum; break;
+                case "/" : opValue = fNum / sNum; break;
+                case "%" : opValue = fNum % sNum; break;
                 
-                console.log(plus);
             }
+            document.getElementById("final").innerHTML = opValue;
         }
     </script>
 </body>
