@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면구조잡기시험</title>
+    <style>
+        div{
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        #wrap{
+            width: 1000px;
+            height: 800px;
+        }
+        #wrap>div{
+            width: 100%;
+        }
+        #header{height: 20%; background-color: orangered;}
+        #navigator{height:5%; background-color: yellow;}
+        #content{height: 55%; background-color: green;}
+        #footer{height: 20%; background-color: blue;}
+
+        #header>div{
+            height: 100%;
+            float: left;
+        }
+        #header_1{width:20%}
+        #header_2{width:50%}
+        #header_3{width:30%}
+
+        #content>div{
+            height: 100%;
+            float:left;
+        }
+        #content_1{width:80%}
+        #content_2{width:20%}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div id="header_1"></div>
+            <div id="header_2"></div>
+            <div id="header_3"></div>
+        </div>
+        <div id="navigator"></div>
+        <div id="content">
+            <div id="content_1">
+                <form action="test.do" method="post">
+                    <fieldset>
+                        <legend>납품자 정보</legend>
+                        <ol>
+                            <li>납품자명 : <input type="text" name="userName" required></li><br>
+                            <li>email : <input type="text" name="email" placeholder="answs@naver.com" required></li><br>
+                            <li>홈페이지 : <input type="text" name="homepage" placeholder="http://" required></li>
+                        </ol>
+                    </fieldset>
+                    <fieldset>
+                        <legend>납품정보</legend>
+                        <ul>
+                            <li>상품명 : <input type="text" name="pName"></li><br>
+                            <li>상품수량 : <input type="number" name="amount" min="10" max="100" step="10"></li><br>
+                            <li>납품등급 : <input type="range" name="level" min="0" max="10" step="2"></li><br>
+                            <li>기타사항 : <textarea name="message"></textarea></li>
+                        </ul>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="content_2"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
