@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery요소접근</title>
+    <script src="../resources/js/jquery-3.5.1.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+   <h1>문제 1. 색상 선택후 변경 버튼을 클릭하면 색상이 변경되도록 만들어 보시오</h1> 
+   <div id="colorarea"></div>
+   <input type="color" id="dcolor">
+    <button id="changeColor">변경</button>
+
+    <script>
+    $(function(){
+
+        $("#changeColor").click(function(){
+            $("#colorarea").css("background",$(dcolor).val());
+            
+        });
+    });
+    </script>
+    <hr>
+
+    <h1>문제 2. 버튼에 따른 크기 조절이 가능하게 만들어 보시오</h1>
+    
+    <div id="area"></div>
+    <input type="button" id="small" value="50x50">
+    <input type="button" id="org" value="원본(100x100)">
+    <input type="button" id="big" value="200x200">
+
+    <script>
+
+        var small = {"width":"50px","height":"50px"};
+        var org = {"width":"100px","height":"100px"};
+        var big = {"width":"200px","height":"200px"};
+
+        $(function(){
+            $("#small").click(function(){
+                $("#area").css(small);
+            });
+            $("#org").click(function(){
+                $("#area").css(org);
+            });
+            $("#big").click(function(){
+                $("#area").css(big);
+            });
+        });
+    </script>
+
+
+</body>
+</html>
